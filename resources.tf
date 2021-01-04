@@ -41,3 +41,7 @@ resource "aws_apigatewayv2_stage" "stage" {
   name = "$default"
   auto_deploy = true
 }
+
+output "zip_path" {
+  value = data.archive_file.payload.output_path
+}
