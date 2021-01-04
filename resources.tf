@@ -45,3 +45,7 @@ resource "aws_apigatewayv2_stage" "stage" {
 output "zip_path" {
   value = data.archive_file.payload.output_path
 }
+
+output "api_url" {
+  value = aws_apigatewayv2_api.api.api_endpoint
+}
