@@ -10,6 +10,7 @@ variable "env_vars" {
     key = string
     value = string
   })
+  default = {}
 }
 
 resource "aws_apigatewayv2_integration" "integration" {
