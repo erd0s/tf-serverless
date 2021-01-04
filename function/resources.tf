@@ -36,7 +36,7 @@ resource "aws_lambda_function" "function" {
 }
 
 resource "aws_cloudwatch_log_group" "logs" {
-  name = var.func_name
+  name = "/aws/lambda/${var.func_name}"
 }
 
 
