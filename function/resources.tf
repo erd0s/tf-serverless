@@ -5,6 +5,12 @@ variable "api_exec_arn" {}
 variable "func_name" {}
 variable "func_handler" {}
 variable "output_path" {}
+variable "env_vars" {
+  type = list(object({
+    key = string
+    value = string
+  }))
+}
 
 resource "aws_apigatewayv2_integration" "integration" {
   api_id = var.api_id
@@ -33,6 +39,9 @@ resource "aws_lambda_function" "function" {
   runtime = "nodejs12.x"
   filename = "payload.zip"
   source_code_hash = filebase64sha256(var.output_path)
+  environment {
+    variables = var.env_vars
+  }
 }
 
 resource "aws_cloudwatch_log_group" "logs" {

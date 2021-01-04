@@ -13,6 +13,7 @@ module "functions" {
   method = each.value.method
   path = each.value.path
   output_path = data.archive_file.payload.output_path
+  env_vars = each.value.env_vars
 }
 
 data "archive_file" "payload" {
