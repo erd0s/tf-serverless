@@ -17,7 +17,7 @@ module "functions" {
 
 data "archive_file" "payload" {
   output_path = "payload.zip"
-  source_file = "index.js"
+  source_dir = var.source_dir
   type = "zip"
 }
 

@@ -1,4 +1,5 @@
 variable "microservice_name" {}
+variable "source_dir" {}
 
 variable "functions" {
   type = list(object({
