@@ -7,9 +7,9 @@ variable "functions" {
     method = string
     path = string
     handler = string
-    environment = list(object({
+    environment = object({
       key = string
       value = string
-    }))
+    })
   }))
 }

@@ -6,10 +6,10 @@ variable "func_name" {}
 variable "func_handler" {}
 variable "output_path" {}
 variable "env_vars" {
-  type = list(object({
+  type = object({
     key = string
     value = string
-  }))
+  })
 }
 
 resource "aws_apigatewayv2_integration" "integration" {
