@@ -6,10 +6,7 @@ variable "func_name" {}
 variable "func_handler" {}
 variable "output_path" {}
 variable "env_vars" {
-  type = object({
-    key = string
-    value = string
-  })
+  type = map(string)
   default = {}
 }
 

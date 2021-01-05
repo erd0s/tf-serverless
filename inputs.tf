@@ -7,6 +7,6 @@ variable "functions" {
     method = string
     path = string
     handler = string
-    environment = object
+    environment = map(string)
   }))
 }
